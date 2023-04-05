@@ -5,7 +5,9 @@
   "type": "module",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
+    "lint": "echo '--- [WARNING] lint script not defined'",
+    "prebuild": "npx rimraf dist",
+    "build": "tsc --project ./config/tsconfig.json",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest --config ./jest.config.ts"
   },
   "keywords": [
@@ -17,6 +19,7 @@
   "license": "MIT",
   "dependencies": {
     "assert": "^2.0.0",
+    "rimraf": "^4.4.1",
     "typescript": "^5.0.2"
   },
   "devDependencies": {
